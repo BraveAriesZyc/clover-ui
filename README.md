@@ -13,14 +13,14 @@
 # 安装依赖
 pnpm i
 
-# 本地开发（演示站）
-pnpm dev
-
 # 构建库（含类型声明与按目录保留的模块）
 pnpm build
 
+# 打包站点（输出至 dist-site）
+pnpm package
+
 # 运行测试
-pnpm test
+# （可选）本仓库不再提供测试命令快捷脚本
 ```
 
 ## 使用示例
@@ -58,8 +58,7 @@ import { ZButton } from 'clover-ui/components/button'
 - 包导出：`package.json#exports` 提供根与子模块入口、样式导出
 
 ## 测试
-- 使用 `vitest` + `@vue/test-utils`，环境为 `jsdom`
-- 示例测试：`tests/components-docs.spec.ts`
+当前工作流仅保留构建与站点打包。如需添加测试，请运行 `vitest` 并补充用例。
 
 ## 贡献指南
 请参考 `CONTRIBUTING.md` 获取开发规范、提交约定与文档编写指南。

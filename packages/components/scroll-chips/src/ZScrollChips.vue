@@ -44,7 +44,8 @@ function scroll(dir: 'left' | 'right') {
   const el = setsEl.value
   const vals = props.items.map(it => getValue(it))
   if (vals.length === 0) return
-  let idx = vals.indexOf(selected.value ?? vals[0])
+  const curr = selected.value ?? vals[0]!
+  let idx = vals.indexOf(curr)
   if (idx < 0) idx = 0
   idx = dir === 'left' ? Math.max(0, idx - 1) : Math.min(vals.length - 1, idx + 1)
   selected.value = vals[idx]

@@ -1,5 +1,6 @@
 export type NavItem = { key: string; label: string; short?: string; icon?: string }
 export type NavGroup = { name: string; icon?: string; items: NavItem[] }
+import docs from './docs'
 
 const groups: NavGroup[] = [
   {
@@ -31,17 +32,7 @@ const groups: NavGroup[] = [
   {
     name: '文档',
     icon: 'bx:file',
-    items: [
-      { key: '/docs/button', label: 'Button 文档', short: 'Button', icon: 'bx:file' },
-      { key: '/docs/input', label: 'Input 文档', short: 'Input', icon: 'bx:file' },
-      { key: '/docs/card', label: 'Card 文档', short: 'Card', icon: 'bx:file' },
-      { key: '/docs/scroll-chips', label: 'ScrollChips 文档', short: 'Chips', icon: 'bx:file' },
-      { key: '/docs/fixed-grid', label: 'ZFixedGrid 文档', short: 'Fixed', icon: 'bx:file' },
-      { key: '/docs/virtual-grid', label: 'ZVirtualGrid 文档', short: 'Virtual', icon: 'bx:file' },
-      { key: '/docs/loading', label: 'Loading 文档', short: 'Loading', icon: 'bx:file' },
-      { key: '/docs/icon', label: 'Icon 文档', short: 'Icon', icon: 'bx:file' },
-      { key: '/docs/svg', label: 'SVG 文档', short: 'SVG', icon: 'bx:file' },
-    ],
+    items: docs.map(d => ({ key: `/docs/${d.key}`, label: `${d.title} 文档`, short: d.short ?? d.key, icon: 'bx:file' })),
   },
   {
     name: '反馈',
