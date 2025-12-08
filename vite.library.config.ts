@@ -1,7 +1,7 @@
-import { defineConfig } from 'vite';
-import vue from '@vitejs/plugin-vue';
-import dts from 'vite-plugin-dts';
-import { resolve } from 'path';
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import dts from 'vite-plugin-dts'
+import { resolve } from 'path'
 
 export default defineConfig({
   plugins: [
@@ -9,12 +9,13 @@ export default defineConfig({
     dts({
       tsconfigPath: resolve(__dirname, 'tsconfig.app.json'),
       entryRoot: resolve(__dirname, 'packages'),
-      outDir: resolve(__dirname, 'dist/types'),
+      outDir: resolve(__dirname, 'dist/library/types'),
       insertTypesEntry: true,
+      copyDtsFiles: true,
     }),
   ],
   build: {
-    outDir: resolve(__dirname, 'dist'),
+    outDir: resolve(__dirname, 'dist/library'),
     sourcemap: true,
     lib: {
       entry: resolve(__dirname, 'packages/index.ts'),
@@ -23,15 +24,15 @@ export default defineConfig({
       formats: ['es', 'cjs', 'umd'],
     },
     rollupOptions: {
-      external: ['vue'],
+      external: ['vue', '@iconify/vue'],
       output: {
         globals: {
           vue: 'Vue',
+          '@iconify/vue': 'IconifyVue',
         },
         assetFileNames: 'assets/[name].[ext]',
-        exports: "named",
+        exports: 'named',
       },
     },
   },
-});
-
+})

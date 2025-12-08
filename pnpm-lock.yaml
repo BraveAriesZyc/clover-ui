@@ -8,16 +8,16 @@ importers:
 
   .:
     dependencies:
+      vue:
+        specifier: ^3.5.0
+        version: 3.5.25(typescript@5.9.3)
+    devDependencies:
       '@iconify/json':
         specifier: ^2.2.216
         version: 2.2.415
       '@iconify/vue':
         specifier: ^4.1.2
         version: 4.3.0(vue@3.5.25(typescript@5.9.3))
-      vue:
-        specifier: ^3.5.0
-        version: 3.5.25(typescript@5.9.3)
-    devDependencies:
       '@types/node':
         specifier: ^24.10.1
         version: 24.10.1

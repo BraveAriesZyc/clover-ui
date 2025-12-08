@@ -4,6 +4,13 @@ import docs from './docs'
 
 const groups: NavGroup[] = [
   {
+    name: '指南',
+    icon: 'bx:home',
+    items: [
+      { key: '/home', label: '安装指南', short: 'Home', icon: 'bx:home' },
+    ],
+  },
+  {
     name: '布局',
     icon: 'bx:grid-alt',
     items: [

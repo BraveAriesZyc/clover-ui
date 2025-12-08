@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { Icon as IconifyIcon } from '@iconify/vue'
+import SvgIcon from './SvgIcon.vue'
 
 type SizeAlias = 'sm' | 'md' | 'lg'
 

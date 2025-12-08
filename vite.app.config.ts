@@ -5,8 +5,17 @@ import { resolve } from 'path'
 export default defineConfig({
   plugins: [vue()],
   build: {
-    outDir: resolve(__dirname, 'dist-site'),
+    outDir: resolve(__dirname, 'dist/app'),
     sourcemap: true,
     emptyOutDir: false,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vue: ['vue'],
+          router: ['vue-router'],
+          iconify: ['@iconify/vue'],
+        },
+      },
+    },
   },
 })

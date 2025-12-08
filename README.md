@@ -13,11 +13,11 @@
 # 安装依赖
 pnpm i
 
-# 构建库（含类型声明与按目录保留的模块）
-pnpm build
+# 构建组件库（含类型声明与按目录保留的模块）
+pnpm build:library
 
-# 打包站点（输出至 dist-site）
-pnpm package
+# 构建站点应用（输出至 dist/app）
+pnpm build:app
 
 # 运行测试
 # （可选）本仓库不再提供测试命令快捷脚本
@@ -52,9 +52,9 @@ import { ZButton } from 'clover-ui/components/button'
 - 文档与数据：`src/pages/docs/DocsPage.vue`、`src/demos/docs/*.api.ts`
 
 ## 构建与导出
-- 主构建：`vite.config.ts`（库模式输出 `ES/CJS/UMD`）
-- 模块保留：`vite.modules.config.ts`（`preserveModules` 输出 `dist/components/*`）
-- 类型生成：`vite-plugin-dts` → `dist/types/**`
+- 主构建：`vite.library.config.ts`（库模式输出 `ES/CJS/UMD`）
+- 模块保留：`vite.library.modules.config.ts`（`preserveModules` 输出 `dist/library/components/*`）
+- 类型生成：`vite-plugin-dts` → `dist/library/types/**`
 - 包导出：`package.json#exports` 提供根与子模块入口、样式导出
 
 ## 测试

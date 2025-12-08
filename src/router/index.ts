@@ -12,11 +12,13 @@ import CardDemo from '../demos/basic/CardDemo.vue'
 import SvgDemo from '../demos/icons/SvgDemo.vue'
 import ScrollChipsDemo from '../demos/basic/ScrollChipsDemo.vue'
 import DocsPage from '../pages/docs/DocsPage.vue'
+import Home from '../pages/Home.vue'
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [
-        { path: '/', redirect: '/card' },
+        { path: '/', redirect: '/home' },
+        { path: '/home', component: Home },
         { path: '/card', component: CardDemo },
         { path: '/button', component: ButtonDemo },
         { path: '/input', component: InputDemo },
