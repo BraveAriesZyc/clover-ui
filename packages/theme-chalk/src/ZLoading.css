@@ -1,0 +1,17 @@
+.z-loading { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; z-index: 1000; }
+.z-loading[data-mask="true"] { background: rgba(0,0,0,0.15); backdrop-filter: blur(2px); }
+.z-loading--cover { position: absolute; }
+.z-loading--fullscreen { position: fixed; }
+.z-loading__container { position: relative; width: 100%; height: 100%; }
+.z-loading__box { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border: 1px solid var(--color-border); border-radius: 10px; background: var(--color-bg); color: var(--color-text); box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
+.z-loading__text { font-size: 12px; color: var(--color-muted); }
+.z-loading__spinner { width: 20px; height: 20px; border: 2px solid var(--color-border); border-top-color: var(--color-primary); border-right-color: var(--color-primary); border-radius: 999px; animation: z-loading-spin 0.8s linear infinite; }
+.z-loading[data-variant="default"] .z-loading__spinner { border-top-color: var(--color-text); border-right-color: var(--color-text); }
+.z-loading[data-variant="primary"] .z-loading__spinner { border-top-color: var(--color-primary); border-right-color: var(--color-primary); }
+.z-loading[data-variant="success"] .z-loading__spinner { border-top-color: var(--color-success); border-right-color: var(--color-success); }
+.z-loading[data-variant="warning"] .z-loading__spinner { border-top-color: var(--color-warning); border-right-color: var(--color-warning); }
+.z-loading[data-variant="danger"] .z-loading__spinner { border-top-color: var(--color-danger); border-right-color: var(--color-danger); }
+.z-loading[data-variant="info"] .z-loading__spinner { border-top-color: var(--color-info); border-right-color: var(--color-info); }
+.z-loading[data-variant="secondary"] .z-loading__spinner { border-top-color: var(--color-secondary); border-right-color: var(--color-secondary); }
+.z-loading[data-variant="blue"] .z-loading__spinner { border-top-color: var(--color-blue); border-right-color: var(--color-blue); }
+@keyframes z-loading-spin { 0% { transform: rotate(0deg) } 100% { transform: rotate(360deg) } }

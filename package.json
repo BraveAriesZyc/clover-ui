@@ -1,0 +1,71 @@
+{
+  "name": "clover-ui",
+  "description": "写给女朋友用的",
+  "private": false,
+  "version": "1.0.3",
+  "type": "module",
+  "types": "./dist/types/index.d.ts",
+  "main": "./dist/clover-ui.cjs.js",
+  "module": "./dist/clover-ui.es.js",
+  "workspaces": [
+    "packages/*"
+  ],
+  "author": {
+    "name": "zyc"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/clover-ui.es.js",
+      "require": "./dist/clover-ui.cjs.js"
+    },
+    "./styles.css": "./dist/assets/clover-ui.css",
+    "./components/*": {
+      "types": "./dist/types/components/*/index.d.ts",
+      "import": "./dist/components/*/index.js"
+    }
+  },
+  "scripts": {
+    "dev": "node ./node_modules/vite/bin/vite.js",
+    "build": "node ./node_modules/vite/bin/vite.js build && node ./node_modules/vite/bin/vite.js build --config vite.modules.config.ts",
+    "preview": "node ./node_modules/vite/bin/vite.js preview",
+    "release": "pnpm build && npm publish --access public",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "vue": "^3.5.0",
+    "@iconify/vue": "^4.1.2",
+    "@iconify/json": "^2.2.216"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "@vue/tsconfig": "^0.8.1",
+    "typescript": "~5.9.3",
+    "vite": "^7.2.4",
+    "vite-plugin-dts": "^4.5.4",
+    "vue-tsc": "^3.1.4",
+    "vue-router": "^4.4.5",
+    "vitest": "^2.1.5",
+    "@vue/test-utils": "^2.4.6",
+    "jsdom": "^24.1.0",
+    "@vitest/coverage-v8": "^2.1.5"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.0"
+  },
+  "sideEffects": [
+    "./dist/assets/clover-ui.css"
+  ],
+  "peerDependenciesMeta": {
+    "vue": {
+      "optional": false
+    }
+  }
+}

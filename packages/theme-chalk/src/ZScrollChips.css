@@ -1,0 +1,11 @@
+.z-scroll-chips { position: relative; display: flex; align-items: center; gap: 8px; flex: 1; min-width: 0; width: 100%; contain: layout paint; }
+.z-scroll-chips__scroll { overflow: hidden; scrollbar-width: none; -ms-overflow-style: none; flex: 1; width: 100%; overscroll-behavior: contain; }
+.z-scroll-chips__scroll::-webkit-scrollbar { display: none; }
+.z-scroll-chips__items { display: flex; gap: 8px; flex-wrap: nowrap; padding: 4px 0; min-width: max-content; }
+.z-scroll-chips__items :deep(.z-button) { border-radius: 999px; }
+.z-scroll-chips__btn { border: none; background: var(--color-bg); color: var(--color-text); width: 28px; height: 28px; border: 1px solid var(--color-border); border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; }
+.z-scroll-chips__btn[data-show="false"] { visibility: hidden; }
+
+/* Snap to center when enabled */
+.z-scroll-chips__scroll.is-snap { scroll-snap-type: x mandatory; }
+.z-scroll-chips__scroll.is-snap .z-scroll-chips__items :deep(.z-button) { scroll-snap-align: center; }

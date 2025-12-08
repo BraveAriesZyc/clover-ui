@@ -1,0 +1,10 @@
+.z-fixed-grid {
+  display: grid;
+  width: 100%;
+  height: 100%;
+}
+
+.z-fixed-grid__cell {
+  box-sizing: border-box;
+}
+
