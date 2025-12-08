@@ -1,15 +1,15 @@
 declare module '@vue/runtime-core' {
     export interface GlobalComponents {
-        ZButton: typeof import('../index')['ZButton']
-        ZInput: typeof import('../index')['ZInput']
-        ZIcon: typeof import('../index')['ZIcon']
-        Icon: typeof import('../index')['Icon']
-        SvgIcon: typeof import('../index')['SvgIcon']
-        ZCard: typeof import('../index')['ZCard']
-        ZScrollChips: typeof import('../index')['ZScrollChips']
-        ZVirtualGrid: typeof import('../index')['ZVirtualGrid']
-        ZFixedGrid: typeof import('../index')['ZFixedGrid']
-        ZLoading: typeof import('../index')['ZLoading']
+        ZButton: typeof import('../components/button')['ZButton']
+        ZInput: typeof import('../components/input')['ZInput']
+        ZIcon: typeof import('../components/icon')['ZIcon']
+        Icon: typeof import('../components/icon')['Icon']
+        SvgIcon: typeof import('../components/icon')['SvgIcon']
+        ZCard: typeof import('../components/card')['ZCard']
+        ZScrollChips: typeof import('../components/scroll-chips')['ZScrollChips']
+        ZVirtualGrid: typeof import('../components/virtual-grid')['ZVirtualGrid']
+        ZFixedGrid: typeof import('../components/fixed-grid')['ZFixedGrid']
+        ZLoading: typeof import('../components/loading')['ZLoading']
     }
 }
 
