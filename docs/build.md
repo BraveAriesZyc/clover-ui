@@ -32,6 +32,7 @@ pnpm add clover-ui vue @iconify/vue
 ```
 
 - 全量：
+
 ```
 import 'clover-ui/style.css'
 import CloverUI from 'clover-ui'
@@ -39,6 +40,7 @@ app.use(CloverUI)
 ```
 
 - 按需：
+
 ```
 import 'clover-ui/style.css'
 import ZButton from 'clover-ui/components/button'
@@ -65,4 +67,3 @@ app.use(ZButton)
 
 - 产物版本号与 `package.json.version` 保持一致
 - sourcemap 默认开启，便于调试与定位问题
-

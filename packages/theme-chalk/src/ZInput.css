@@ -1,43 +1,58 @@
 .z-input {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  padding: 2px 6px;
-  background-color: var(--color-bg);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    padding: 2px 6px;
+    background-color: var(--color-bg);
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease,
+        color 0.2s ease;
 }
 
-.z-input:focus-within { border-color: var(--color-primary); box-shadow: 0 0 0 2px var(--focus-ring); }
+.z-input:focus-within {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px var(--focus-ring);
+}
 
 .z-input__inner {
-  flex: 1;
-  border: none;
-  outline: none;
-  background: transparent;
-  font-size: 14px;
-  padding: 6px 4px;
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+    padding: 6px 4px;
 }
 
 .z-input__prefix,
 .z-input__suffix {
-  display: inline-flex;
-  align-items: center;
-  color: var(--color-muted);
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-muted);
 }
 
 .z-input__prefix:empty,
 .z-input__suffix:empty {
-  display: none;
+    display: none;
 }
 
-.z-input.is-disabled { background-color: var(--color-bg-muted); color: var(--color-muted); cursor: not-allowed; }
+.z-input.is-disabled {
+    background-color: var(--color-bg-muted);
+    color: var(--color-muted);
+    cursor: not-allowed;
+}
 
 .z-input.is-disabled .z-input__inner {
-  cursor: not-allowed;
+    cursor: not-allowed;
 }
 
-.z-input.is-invalid { border-color: var(--color-danger); }
+.z-input.is-invalid {
+    border-color: var(--color-danger);
+}
 
-.z-input.is-invalid:focus-within { box-shadow: 0 0 0 2px var(--danger-ring); }
+.z-input.is-invalid:focus-within {
+    box-shadow: 0 0 0 2px var(--danger-ring);
+}

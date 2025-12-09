@@ -1,24 +1,32 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.dom.json",
-  "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-    "types": ["vite/client", "vue"],
-    "declaration": true,        // 生成 .d.ts 类型文件
-    "emitDeclarationOnly": true,// 只生成类型，不编译 JS（交给 Rollup）
-    "outDir": "dist",
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"],
-      "packages/*": ["./packages/*"]
+    "extends": "@vue/tsconfig/tsconfig.dom.json",
+    "compilerOptions": {
+        "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+        "types": ["vite/client", "vue"],
+        "declaration": true, // 生成 .d.ts 类型文件
+        "emitDeclarationOnly": true, // 只生成类型，不编译 JS（交给 Rollup）
+        "outDir": "dist",
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./src/*"],
+            "packages/*": ["./packages/*"]
+        },
+        /* Linting */
+        "strict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "erasableSyntaxOnly": true,
+        "noFallthroughCasesInSwitch": true,
+        "noUncheckedSideEffectImports": true
     },
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
-  },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "src/**/*.d.ts", "packages/**/*.ts", "packages/**/*.vue", "packages/**/*.d.ts"],
-  "exclude": ["node_modules", "dist"]
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "src/**/*.vue",
+        "src/**/*.d.ts",
+        "packages/**/*.ts",
+        "packages/**/*.vue",
+    "packages/**/*.d.ts"
+  ],
+    "exclude": ["node_modules", "dist"]
 }

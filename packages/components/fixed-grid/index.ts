@@ -5,4 +5,3 @@ const ZFixedGrid = withInstall(ZFixedGridVue, 'ZFixedGrid')
 
 export default ZFixedGrid
 export { ZFixedGrid }
-

@@ -1,77 +1,80 @@
 {
-  "name": "clover-ui",
-  "description": "写给女朋友用的",
-  "private": false,
-  "version": "1.1.1",
-  "type": "module",
-  "types": "./dist/library/types/types/entry.d.ts",
-  "main": "./dist/library/clover-ui.cjs.js",
-  "module": "./dist/library/clover-ui.es.js",
-  "browser": "./dist/library/clover-ui.umd.js",
-  "workspaces": [
-    "packages/*"
-  ],
-  "author": {
-    "name": "zyc"
-  },
-  "files": [
-    "dist",
-    "README.md"
-  ],
-  "exports": {
-    ".": {
-      "types": "./dist/library/types/types/entry.d.ts",
-      "import": "./dist/library/clover-ui.es.js",
-      "require": "./dist/library/clover-ui.cjs.js"
+    "name": "clover-ui",
+    "description": "写给女朋友用的",
+    "private": false,
+    "version": "1.1.1",
+    "type": "module",
+    "types": "./dist/library/types/types/entry.d.ts",
+    "main": "./dist/library/clover-ui.cjs.js",
+    "module": "./dist/library/clover-ui.es.js",
+    "browser": "./dist/library/clover-ui.umd.js",
+    "workspaces": [
+        "packages/*"
+    ],
+    "author": {
+        "name": "zyc"
     },
-    "./styles.css": "./dist/library/assets/clover-ui.css",
-    "./style.css": "./dist/library/assets/clover-ui.css",
-    "./components/*": {
-      "types": "./dist/library/types/components/*/index.d.ts",
-      "import": "./dist/library/components/*/index.js"
+    "files": [
+        "dist",
+        "README.md"
+    ],
+    "exports": {
+        ".": {
+            "types": "./dist/library/types/types/entry.d.ts",
+            "import": "./dist/library/clover-ui.es.js",
+            "require": "./dist/library/clover-ui.cjs.js"
+        },
+        "./types": "./dist/library/types/types/entry.d.ts",
+        "./styles.css": "./dist/library/assets/clover-ui.css",
+        "./style.css": "./dist/library/assets/clover-ui.css",
+        "./theme-chalk/*": "./dist/library/theme-chalk/*.css",
+        "./components/*": {
+            "types": "./dist/library/types/components/*/index.d.ts",
+            "import": "./dist/library/components/*/index.js"
+        }
+    },
+    "scripts": {
+        "dev:app": "node ./node_modules/vite/bin/vite.js --config vite.app.config.ts",
+        "typecheck": "vue-tsc --noEmit",
+        "format": "prettier --write .",
+        "build:library": "pnpm run typecheck && node ./node_modules/vite/bin/vite.js build --config vite.library.config.ts && node ./node_modules/vite/bin/vite.js build --config vite.library.modules.config.ts && node scripts/copy-styles.mjs",
+        "build:app": "pnpm run typecheck && node ./node_modules/vite/bin/vite.js build --config vite.app.config.ts",
+        "build:all": "pnpm run build:library && pnpm run build:app"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "@iconify/vue": "^4.1.2",
+        "@iconify/json": "^2.2.216",
+        "@types/node": "^24.10.1",
+        "@vitejs/plugin-vue": "^6.0.2",
+        "@vue/tsconfig": "^0.8.1",
+        "typescript": "~5.9.3",
+        "vite": "^7.2.4",
+        "vite-plugin-dts": "^4.5.4",
+        "vue-tsc": "^3.1.4",
+        "vue-router": "^4.4.5",
+        "vitest": "^2.1.5",
+        "@vue/test-utils": "^2.4.6",
+        "jsdom": "^24.1.0",
+        "@vitest/coverage-v8": "^2.1.5"
+    },
+    "peerDependencies": {
+        "vue": "^3.5.0",
+        "@iconify/vue": "^4.1.2"
+    },
+    "sideEffects": [
+        "./dist/library/assets/clover-ui.css"
+    ],
+    "typesVersions": {
+        "*": {
+            "components/*": [
+                "dist/library/types/components/*/index.d.ts"
+            ]
+        }
+    },
+    "peerDependenciesMeta": {
+        "vue": {
+            "optional": false
+        }
     }
-  },
-  "scripts": {
-    "dev:app": "node ./node_modules/vite/bin/vite.js --config vite.app.config.ts",
-    "typecheck": "vue-tsc --noEmit",
-    "build:library": "pnpm run typecheck && node ./node_modules/vite/bin/vite.js build --config vite.library.config.ts && node ./node_modules/vite/bin/vite.js build --config vite.library.modules.config.ts",
-    "build:app": "pnpm run typecheck && node ./node_modules/vite/bin/vite.js build --config vite.app.config.ts",
-    "build:all": "pnpm run build:library && pnpm run build:app"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "@iconify/vue": "^4.1.2",
-    "@iconify/json": "^2.2.216",
-    "@types/node": "^24.10.1",
-    "@vitejs/plugin-vue": "^6.0.1",
-    "@vue/tsconfig": "^0.8.1",
-    "typescript": "~5.9.3",
-    "vite": "^7.2.4",
-    "vite-plugin-dts": "^4.5.4",
-    "vue-tsc": "^3.1.4",
-    "vue-router": "^4.4.5",
-    "vitest": "^2.1.5",
-    "@vue/test-utils": "^2.4.6",
-    "jsdom": "^24.1.0",
-    "@vitest/coverage-v8": "^2.1.5"
-  },
-  "peerDependencies": {
-    "vue": "^3.5.0",
-    "@iconify/vue": "^4.1.2"
-  },
-  "sideEffects": [
-    "./dist/library/assets/clover-ui.css"
-  ],
-  "typesVersions": {
-    "*": {
-      "components/*": [
-        "dist/library/types/components/*/index.d.ts"
-      ]
-    }
-  },
-  "peerDependenciesMeta": {
-    "vue": {
-      "optional": false
-    }
-  }
 }

@@ -1,7 +1,7 @@
-import ZInputVue from "./src/ZInput.vue";
-import { withInstall } from "../../utils/withInstall";
+import ZInputVue from './src/ZInput.vue'
+import { withInstall } from '../../utils/withInstall'
 
-const ZInput = withInstall(ZInputVue, "ZInput");
+const ZInput = withInstall(ZInputVue, 'ZInput')
 
-export default ZInput;
-export { ZInput };
+export default ZInput
+export { ZInput }

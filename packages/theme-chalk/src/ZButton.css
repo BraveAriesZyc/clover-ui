@@ -1,83 +1,167 @@
 .z-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  font-size: 14px;
-  padding: 6px 12px;
-  cursor: pointer;
-  outline: none;
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
-  white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 14px;
+    padding: 6px 12px;
+    cursor: pointer;
+    outline: none;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        opacity 0.2s ease;
+    white-space: nowrap;
 }
 
-.z-button:focus-visible { box-shadow: 0 0 0 2px var(--focus-ring); }
+.z-button:focus-visible {
+    box-shadow: 0 0 0 2px var(--focus-ring);
+}
 
-.z-button--primary { background-color: var(--color-primary); color: #fff; border-color: var(--color-primary); }
-.z-button--primary:hover:not(.is-disabled):not(.is-loading) { background-color: var(--color-primary-hover); border-color: var(--color-primary-hover); }
-.z-button--primary:active:not(.is-disabled):not(.is-loading) { background-color: var(--color-primary-active); border-color: var(--color-primary-active); }
+.z-button--primary {
+    background-color: var(--color-primary);
+    color: #fff;
+    border-color: var(--color-primary);
+}
+.z-button--primary:hover:not(.is-disabled):not(.is-loading) {
+    background-color: var(--color-primary-hover);
+    border-color: var(--color-primary-hover);
+}
+.z-button--primary:active:not(.is-disabled):not(.is-loading) {
+    background-color: var(--color-primary-active);
+    border-color: var(--color-primary-active);
+}
 
-.z-button--default { background-color: var(--color-bg); color: var(--color-text); border-color: var(--color-border); }
-.z-button--default:hover:not(.is-disabled):not(.is-loading) { border-color: var(--color-border-hover); }
-.z-button--default:active:not(.is-disabled):not(.is-loading) { border-color: var(--color-border-active); }
+.z-button--default {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    border-color: var(--color-border);
+}
+.z-button--default:hover:not(.is-disabled):not(.is-loading) {
+    border-color: var(--color-border-hover);
+}
+.z-button--default:active:not(.is-disabled):not(.is-loading) {
+    border-color: var(--color-border-active);
+}
 
-.z-button--danger { background-color: var(--color-danger); color: #fff; border-color: var(--color-danger); }
-.z-button--danger:hover:not(.is-disabled):not(.is-loading) { background-color: var(--color-danger-hover); border-color: var(--color-danger-hover); }
-.z-button--danger:active:not(.is-disabled):not(.is-loading) { background-color: var(--color-danger-active); border-color: var(--color-danger-active); }
+.z-button--danger {
+    background-color: var(--color-danger);
+    color: #fff;
+    border-color: var(--color-danger);
+}
+.z-button--danger:hover:not(.is-disabled):not(.is-loading) {
+    background-color: var(--color-danger-hover);
+    border-color: var(--color-danger-hover);
+}
+.z-button--danger:active:not(.is-disabled):not(.is-loading) {
+    background-color: var(--color-danger-active);
+    border-color: var(--color-danger-active);
+}
 
-.z-button--success { background-color: var(--color-success); color: #fff; border-color: var(--color-success); }
-.z-button--success:hover:not(.is-disabled):not(.is-loading) { background-color: var(--color-success-hover); border-color: var(--color-success-hover); }
-.z-button--success:active:not(.is-disabled):not(.is-loading) { background-color: var(--color-success-active); border-color: var(--color-success-active); }
+.z-button--success {
+    background-color: var(--color-success);
+    color: #fff;
+    border-color: var(--color-success);
+}
+.z-button--success:hover:not(.is-disabled):not(.is-loading) {
+    background-color: var(--color-success-hover);
+    border-color: var(--color-success-hover);
+}
+.z-button--success:active:not(.is-disabled):not(.is-loading) {
+    background-color: var(--color-success-active);
+    border-color: var(--color-success-active);
+}
 
-.z-button--warning { background-color: var(--color-warning); color: #fff; border-color: var(--color-warning); }
-.z-button--warning:hover:not(.is-disabled):not(.is-loading) { background-color: var(--color-warning-hover); border-color: var(--color-warning-hover); }
-.z-button--warning:active:not(.is-disabled):not(.is-loading) { background-color: var(--color-warning-active); border-color: var(--color-warning-active); }
+.z-button--warning {
+    background-color: var(--color-warning);
+    color: #fff;
+    border-color: var(--color-warning);
+}
+.z-button--warning:hover:not(.is-disabled):not(.is-loading) {
+    background-color: var(--color-warning-hover);
+    border-color: var(--color-warning-hover);
+}
+.z-button--warning:active:not(.is-disabled):not(.is-loading) {
+    background-color: var(--color-warning-active);
+    border-color: var(--color-warning-active);
+}
 
-.z-button--info { background-color: var(--color-info); color: #fff; border-color: var(--color-info); }
-.z-button--info:hover:not(.is-disabled):not(.is-loading) { background-color: var(--color-info-hover); border-color: var(--color-info-hover); }
-.z-button--info:active:not(.is-disabled):not(.is-loading) { background-color: var(--color-info-active); border-color: var(--color-info-active); }
+.z-button--info {
+    background-color: var(--color-info);
+    color: #fff;
+    border-color: var(--color-info);
+}
+.z-button--info:hover:not(.is-disabled):not(.is-loading) {
+    background-color: var(--color-info-hover);
+    border-color: var(--color-info-hover);
+}
+.z-button--info:active:not(.is-disabled):not(.is-loading) {
+    background-color: var(--color-info-active);
+    border-color: var(--color-info-active);
+}
 
-.z-button--secondary { background-color: var(--color-secondary); color: #fff; border-color: var(--color-secondary); }
-.z-button--secondary:hover:not(.is-disabled):not(.is-loading) { background-color: var(--color-secondary-hover); border-color: var(--color-secondary-hover); }
-.z-button--secondary:active:not(.is-disabled):not(.is-loading) { background-color: var(--color-secondary-active); border-color: var(--color-secondary-active); }
+.z-button--secondary {
+    background-color: var(--color-secondary);
+    color: #fff;
+    border-color: var(--color-secondary);
+}
+.z-button--secondary:hover:not(.is-disabled):not(.is-loading) {
+    background-color: var(--color-secondary-hover);
+    border-color: var(--color-secondary-hover);
+}
+.z-button--secondary:active:not(.is-disabled):not(.is-loading) {
+    background-color: var(--color-secondary-active);
+    border-color: var(--color-secondary-active);
+}
 
-.z-button--blue { background-color: var(--color-blue); color: #fff; border-color: var(--color-blue); }
-.z-button--blue:hover:not(.is-disabled):not(.is-loading) { background-color: var(--color-blue-hover); border-color: var(--color-blue-hover); }
-.z-button--blue:active:not(.is-disabled):not(.is-loading) { background-color: var(--color-blue-active); border-color: var(--color-blue-active); }
+.z-button--blue {
+    background-color: var(--color-blue);
+    color: #fff;
+    border-color: var(--color-blue);
+}
+.z-button--blue:hover:not(.is-disabled):not(.is-loading) {
+    background-color: var(--color-blue-hover);
+    border-color: var(--color-blue-hover);
+}
+.z-button--blue:active:not(.is-disabled):not(.is-loading) {
+    background-color: var(--color-blue-active);
+    border-color: var(--color-blue-active);
+}
 
 .z-button--sm {
-  padding: 4px 10px;
-  font-size: 12px;
+    padding: 4px 10px;
+    font-size: 12px;
 }
 
 .z-button--md {
-  padding: 6px 12px;
-  font-size: 14px;
+    padding: 6px 12px;
+    font-size: 14px;
 }
 
 .z-button--lg {
-  padding: 10px 16px;
-  font-size: 16px;
+    padding: 10px 16px;
+    font-size: 16px;
 }
 
 .z-button__icon {
-  display: inline-flex;
-  margin-right: 6px;
+    display: inline-flex;
+    margin-right: 6px;
 }
 
 .z-button__icon:empty {
-  display: none;
-  margin: 0;
+    display: none;
+    margin: 0;
 }
 
 .z-button.is-disabled,
 .z-button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+    opacity: 0.6;
+    cursor: not-allowed;
 }
 
 .z-button.is-loading {
-  opacity: 0.8;
-  cursor: progress;
+    opacity: 0.8;
+    cursor: progress;
 }

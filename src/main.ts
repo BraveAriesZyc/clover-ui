@@ -1,7 +1,7 @@
-import {createApp} from 'vue'
+import { createApp } from 'vue'
 import router from './router'
 import App from './App.vue'
-import CloverUI from "../packages";
+import CloverUI from '../packages'
 import './styles/theme/dark.css'
 import './styles/global.css'
 

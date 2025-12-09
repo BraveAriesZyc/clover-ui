@@ -1,43 +1,43 @@
-[data-theme="dark"] {
-  --color-primary: #409eff;
-  --color-primary-hover: #66b1ff;
-  --color-primary-active: #3a8ee6;
+[data-theme='dark'] {
+    --color-primary: #409eff;
+    --color-primary-hover: #66b1ff;
+    --color-primary-active: #3a8ee6;
 
-  --color-danger: #f56c6c;
-  --color-danger-hover: #f78989;
-  --color-danger-active: #dd6161;
+    --color-danger: #f56c6c;
+    --color-danger-hover: #f78989;
+    --color-danger-active: #dd6161;
 
-  --color-success: #67c23a;
-  --color-success-hover: #85ce61;
-  --color-success-active: #5daf34;
+    --color-success: #67c23a;
+    --color-success-hover: #85ce61;
+    --color-success-active: #5daf34;
 
-  --color-warning: #e6a23c;
-  --color-warning-hover: #ebb563;
-  --color-warning-active: #cf9236;
+    --color-warning: #e6a23c;
+    --color-warning-hover: #ebb563;
+    --color-warning-active: #cf9236;
 
-  --color-info: #909399;
-  --color-info-hover: #a6a9ad;
-  --color-info-active: #7d828a;
+    --color-info: #909399;
+    --color-info-hover: #a6a9ad;
+    --color-info-active: #7d828a;
 
-  --color-secondary: #606266;
-  --color-secondary-hover: #73767a;
-  --color-secondary-active: #4c4f53;
+    --color-secondary: #606266;
+    --color-secondary-hover: #73767a;
+    --color-secondary-active: #4c4f53;
 
-  --color-blue: #2979ff;
-  --color-blue-hover: #4d94ff;
-  --color-blue-active: #1f5fe0;
+    --color-blue: #2979ff;
+    --color-blue-hover: #4d94ff;
+    --color-blue-active: #1f5fe0;
 
-  --color-text: #e5e7eb;
-  --color-muted: #a8abb2;
-  --color-border: #3b3f45;
-  --color-border-hover: #4b5056;
-  --color-border-active: #6b7280;
-  --color-bg: #1f2937;
-  --color-bg-muted: #111827;
-  --focus-ring: rgba(64, 158, 255, 0.25);
-  --danger-ring: rgba(245, 108, 108, 0.25);
+    --color-text: #e5e7eb;
+    --color-muted: #a8abb2;
+    --color-border: #3b3f45;
+    --color-border-hover: #4b5056;
+    --color-border-active: #6b7280;
+    --color-bg: #1f2937;
+    --color-bg-muted: #111827;
+    --focus-ring: rgba(64, 158, 255, 0.25);
+    --danger-ring: rgba(245, 108, 108, 0.25);
 
-  --layout-bg: #0f172a;
-  --layout-header-bg: #111827;
-  --layout-border: #2c2f36;
+    --layout-bg: #0f172a;
+    --layout-header-bg: #111827;
+    --layout-border: #2c2f36;
 }
