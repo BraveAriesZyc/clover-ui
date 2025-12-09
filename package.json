@@ -2,7 +2,7 @@
     "name": "clover-ui",
     "description": "专属ui库",
     "private": false,
-    "version": "1.1.2",
+    "version": "1.1.3",
     "type": "module",
     "types": "./dist/library/types/types/entry.d.ts",
     "main": "./dist/library/clover-ui.cjs.js",
