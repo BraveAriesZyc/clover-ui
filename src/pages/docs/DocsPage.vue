@@ -5,7 +5,6 @@
     import ComponentApi from '../../components/Api/ComponentApi.vue'
 
     const route = useRoute()
-    const router = useRouter()
     const name = computed(() => String(route.params.name || ''))
 
     const titleMap: Record<string, string> = Object.fromEntries(docs.map((d) => [d.key, d.title]))
@@ -19,11 +18,6 @@
         types?: any[]
     } | null>(null)
 
-    const docItems = docs.map((d) => ({ key: d.key, label: d.title }))
-
-    function nav(to: string) {
-        router.push({ name: 'docsPage', params: { name: to } })
-    }
 
     const docsModules = import.meta.glob('../../demos/docs/*.api.ts')
     async function load(n: string) {
@@ -59,20 +53,6 @@
 
 <template>
     <div class="docs">
-        <aside class="docs__sidebar">
-            <div class="docs__sidebar-title">文档目录</div>
-            <div class="docs__sidebar-items">
-                <button
-                    v-for="it in docItems"
-                    :key="it.key"
-                    class="docs__sidebar-item"
-                    :data-active="name === it.key ? 'true' : 'false'"
-                    @click="nav(it.key)"
-                >
-                    {{ it.label }}
-                </button>
-            </div>
-        </aside>
         <div class="docs__content">
             <div class="docs__title">{{ titleMap[name] || name }}</div>
             <ComponentApi v-if="data" v-bind="data" />
@@ -83,43 +63,14 @@
 
 <style scoped>
     .docs {
-        display: grid;
-        grid-template-columns: 220px 1fr;
+        display: flex;
+
         gap: 12px;
         padding: 16px;
     }
-    .docs__sidebar {
-        border-right: 1px solid var(--color-border);
-        padding-right: 12px;
-    }
-    .docs__sidebar-title {
-        font-weight: 600;
-        font-size: 12px;
-        color: var(--color-muted);
-        margin-bottom: 8px;
-    }
-    .docs__sidebar-items {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-    }
-    .docs__sidebar-item {
-        text-align: left;
-        padding: 6px 8px;
-        border-radius: 6px;
-        border: none;
-        background: transparent;
-        cursor: pointer;
-        color: var(--color-text);
-    }
-    .docs__sidebar-item:hover {
-        background: var(--color-bg-muted);
-    }
-    .docs__sidebar-item[data-active='true'] {
-        color: var(--color-primary);
-        background: var(--nav-active-bg);
-    }
+
     .docs__content {
+        flex: 1;
         padding-left: 4px;
     }
     .docs__title {

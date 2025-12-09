@@ -1,8 +1,8 @@
 {
     "name": "clover-ui",
-    "description": "写给女朋友用的",
+    "description": "专属ui库",
     "private": false,
-    "version": "1.1.1",
+    "version": "1.1.2",
     "type": "module",
     "types": "./dist/library/types/types/entry.d.ts",
     "main": "./dist/library/clover-ui.cjs.js",
@@ -56,10 +56,10 @@
         "vitest": "^2.1.5",
         "@vue/test-utils": "^2.4.6",
         "jsdom": "^24.1.0",
+        "vue": "^3.5.0",
         "@vitest/coverage-v8": "^2.1.5"
     },
     "peerDependencies": {
-        "vue": "^3.5.0",
         "@iconify/vue": "^4.1.2"
     },
     "sideEffects": [
@@ -72,9 +72,5 @@
             ]
         }
     },
-    "peerDependenciesMeta": {
-        "vue": {
-            "optional": false
-        }
-    }
+    "peerDependenciesMeta": {}
 }
