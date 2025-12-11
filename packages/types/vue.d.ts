@@ -24,6 +24,18 @@ declare module '@vue/runtime-core' {
         ZLoading:
             | (typeof import('../components/loading'))['ZLoading']
             | (typeof import('../index'))['ZLoading']
+        ZLayout:
+            | (typeof import('../components/layout'))['ZLayout']
+            | (typeof import('../index'))['ZLayout']
+        ZLayoutHeader:
+            | (typeof import('../components/layout'))['ZLayoutHeader']
+            | (typeof import('../index'))['ZLayoutHeader']
+        ZLayoutSidebar:
+            | (typeof import('../components/layout'))['ZLayoutSidebar']
+            | (typeof import('../index'))['ZLayoutSidebar']
+        ZLayoutContent:
+            | (typeof import('../components/layout'))['ZLayoutContent']
+            | (typeof import('../index'))['ZLayoutContent']
     }
 }
 

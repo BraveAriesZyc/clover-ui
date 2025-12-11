@@ -144,19 +144,19 @@ import NameDemo from '../demos/NameDemo.vue'
 ## 按需样式引入（发布后可用）
 
 - 变量：
-  - `import 'clover-ui/theme-chalk/variables.css'`
+    - `import 'clover-ui/theme-chalk/variables.css'`
 - 单组件样式：
-  - `import 'clover-ui/theme-chalk/Z<Name>.css'`
+    - `import 'clover-ui/theme-chalk/Z<Name>.css'`
 - 全量样式：
-  - `import 'clover-ui/styles.css'`
+    - `import 'clover-ui/styles.css'`
 
 ### 导出路径说明
 
 - 组件按需：
-  - 根入口：`import { ZName } from 'clover-ui'`
-  - 子路径：`import { ZName } from 'clover-ui/components/<name>'`
+    - 根入口：`import { ZName } from 'clover-ui'`
+    - 子路径：`import { ZName } from 'clover-ui/components/<name>'`
 - 样式按需：
-  - `import 'clover-ui/theme-chalk/Z<Name>.css'`
+    - `import 'clover-ui/theme-chalk/Z<Name>.css'`
 
 - 新增组件必须根据“类型分类”归档到对应分组；若当前项目没有该分组，则按业内常见分类新增分组。
 - 推荐分组（与主流 UI 一致）：

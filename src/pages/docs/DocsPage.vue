@@ -1,6 +1,6 @@
 <script setup lang="ts">
     import { ref, computed, watch } from 'vue'
-    import { useRoute, useRouter } from 'vue-router'
+    import { useRoute } from 'vue-router'
     import docs from '../../data/docs'
     import ComponentApi from '../../components/Api/ComponentApi.vue'
 
@@ -17,7 +17,6 @@
         configs?: Array<{ title: string; rows: any[] }>
         types?: any[]
     } | null>(null)
-
 
     const docsModules = import.meta.glob('../../demos/docs/*.api.ts')
     async function load(n: string) {

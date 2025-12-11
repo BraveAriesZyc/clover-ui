@@ -61,7 +61,7 @@
 构建站点：pnpm run build:app</code></pre>
         </section>
     </div>
-    </template>
+</template>
 
 <style scoped>
     .home {

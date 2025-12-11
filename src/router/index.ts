@@ -4,6 +4,7 @@ import InputDemo from '../demos/form/InputDemo.vue'
 import IconDemo from '../demos/icons/IconDemo.vue'
 import FixedGridDemo from '../demos/layout/FixedGridDemo.vue'
 import VirtualGridDemo from '../demos/layout/VirtualGridDemo.vue'
+import AppLayoutDemo from '../demos/layout/AppLayoutDemo.vue'
 import MessageDemo from '../demos/feedback/MessageDemo.vue'
 import AlertDemo from '../demos/feedback/AlertDemo.vue'
 import ToastDemo from '../demos/feedback/ToastDemo.vue'
@@ -25,6 +26,7 @@ const router = createRouter({
         { path: '/scroll-chips', component: ScrollChipsDemo },
         { path: '/fixed-grid', component: FixedGridDemo },
         { path: '/virtual-grid', component: VirtualGridDemo },
+        { path: '/app-layout', component: AppLayoutDemo },
         { path: '/message', component: MessageDemo },
         { path: '/alert', component: AlertDemo },
         { path: '/toast', component: ToastDemo },

@@ -1,14 +1,13 @@
 <script setup lang="ts">
-    import { ref, computed, watch } from 'vue'
+import {computed, ref, watch} from 'vue'
     import { useRouter, useRoute } from 'vue-router'
     import groups from '../../data/nav'
 
     const router = useRouter()
     const route = useRoute()
-    const collapsed = ref(false)
+    const props = defineProps<{ collapsed?: boolean }>()
     function toggle() {
-        const next = !collapsed.value
-        collapsed.value = next
+        const next = !(props.collapsed ?? false)
         if (next) {
             Object.keys(openGroups.value).forEach((k) => {
                 openGroups.value[k] = false
@@ -61,7 +60,7 @@
         flyout.value.open = false
     }
     function toggleGroup(name: string, evt?: MouseEvent) {
-        if (collapsed.value) {
+        if (props.collapsed) {
             const rect = (evt?.currentTarget as HTMLElement)?.getBoundingClientRect()
             openFlyout(name, rect ? rect.top : 64)
             return
@@ -77,23 +76,23 @@
 </script>
 
 <template>
-    <aside class="sidebar" :data-collapsed="collapsed ? 'true' : 'false'">
+    <aside class="sidebar" :data-collapsed="props.collapsed ? 'true' : 'false'">
         <div class="sidebar__title">
             <span class="sidebar__brand">Clover UI</span>
-            <button class="sidebar__toggle" @click="toggle" :title="collapsed ? '展开' : '折叠'">
-                <ZIcon :name="collapsed ? 'bx:chevrons-right' : 'bx:chevrons-left'" />
+            <button class="sidebar__toggle" @click="toggle" :title="props.collapsed ? '展开' : '折叠'">
+                <ZIcon :name="props.collapsed ? 'bx:chevrons-right' : 'bx:chevrons-left'" />
             </button>
         </div>
         <div class="sidebar__groups">
             <div v-for="g in groups" :key="g.name" class="sidebar__group">
                 <button
                     class="sidebar__group-title"
-                    :data-open="!collapsed && openGroups[g.name] ? 'true' : 'false'"
+                    :data-open="!props.collapsed && openGroups[g.name] ? 'true' : 'false'"
                     :data-active="
                         g.items.some((it) => isActivePath(route.path, it.key)) ? 'true' : 'false'
                     "
                     @click="toggleGroup(g.name, $event)"
-                    :aria-expanded="!collapsed && openGroups[g.name]"
+                    :aria-expanded="!props.collapsed && openGroups[g.name]"
                 >
                     <span class="sidebar__group-name">
                         <ZIcon v-if="g.icon" :name="g.icon" size="md" />
@@ -103,7 +102,7 @@
                 </button>
                 <div
                     class="sidebar__items"
-                    :data-open="!collapsed && openGroups[g.name] ? 'true' : 'false'"
+                    :data-open="!props.collapsed && openGroups[g.name] ? 'true' : 'false'"
                 >
                     <button
                         v-for="it in g.items"
@@ -116,7 +115,7 @@
                         <ZIcon v-if="it.icon" :name="it.icon" size="md" />
                         <span
                             class="sidebar__item-label"
-                            :data-collapsed="collapsed ? 'true' : 'false'"
+                            :data-collapsed="props.collapsed ? 'true' : 'false'"
                         >
                             {{ collapsed ? it.short : it.label }}
                         </span>
@@ -126,12 +125,12 @@
         </div>
     </aside>
     <div
-        v-if="collapsed && flyout.open"
+        v-if="props.collapsed && flyout.open"
         class="sidebar__flyout-backdrop"
         @click="closeFlyout"
     ></div>
     <div
-        v-if="collapsed && flyout.open"
+        v-if="props.collapsed && flyout.open"
         class="sidebar__flyout"
         :style="{ top: flyout.top + 'px' }"
     >

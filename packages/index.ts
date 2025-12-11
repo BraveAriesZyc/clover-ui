@@ -8,6 +8,7 @@ import ZScrollChips from './components/scroll-chips'
 import ZVirtualGrid from './components/virtual-grid'
 import ZFixedGrid from './components/fixed-grid'
 import ZLoading from './components/loading'
+import ZLayout, { ZLayoutHeader, ZLayoutSidebar, ZLayoutContent } from './components/layout'
 
 export { openLoading } from './components/loading'
 export { useLoading } from './components/loading'
@@ -22,6 +23,10 @@ export {
     ZVirtualGrid,
     ZFixedGrid,
     ZLoading,
+    ZLayout,
+    ZLayoutHeader,
+    ZLayoutSidebar,
+    ZLayoutContent,
 }
 
 export default {
@@ -36,5 +41,9 @@ export default {
         app.use(ZVirtualGrid)
         app.use(ZFixedGrid)
         app.use(ZLoading)
+        app.use(ZLayout)
+        app.use(ZLayoutHeader)
+        app.use(ZLayoutSidebar)
+        app.use(ZLayoutContent)
     },
 }

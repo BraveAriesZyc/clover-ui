@@ -24,6 +24,12 @@ const groups: NavGroup[] = [
                 short: 'VirtualGrid',
                 icon: 'bx:grid-alt',
             },
+            {
+                key: '/app-layout',
+                label: 'ZLayout 通用布局',
+                short: 'Layout',
+                icon: 'bx:layout',
+            },
         ],
     },
     {
