@@ -36,6 +36,9 @@ declare module '@vue/runtime-core' {
         ZLayoutContent:
             | (typeof import('../components/layout'))['ZLayoutContent']
             | (typeof import('../index'))['ZLayoutContent']
+        ZMessage:
+            | (typeof import('../components/message'))['ZMessage']
+            | (typeof import('../index'))['ZMessage']
     }
 }
 

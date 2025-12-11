@@ -1,1 +1,9 @@
-.z-layout-header { height: var(--z-header-h, 52px); display: flex; align-items: center; justify-content: space-between; padding: 0 12px; border-bottom: 1px solid var(--color-border); }
+.z-layout-header {
+    width: 100%;
+    height: calc(var(--z-header-h, 52) / 16 * 1rem);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+
+}

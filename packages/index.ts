@@ -9,6 +9,8 @@ import ZVirtualGrid from './components/virtual-grid'
 import ZFixedGrid from './components/fixed-grid'
 import ZLoading from './components/loading'
 import ZLayout, { ZLayoutHeader, ZLayoutSidebar, ZLayoutContent } from './components/layout'
+import ZMessage from './components/message'
+export { openMessage, message } from './components/message'
 
 export { openLoading } from './components/loading'
 export { useLoading } from './components/loading'
@@ -27,6 +29,7 @@ export {
     ZLayoutHeader,
     ZLayoutSidebar,
     ZLayoutContent,
+    ZMessage,
 }
 
 export default {
@@ -45,5 +48,6 @@ export default {
         app.use(ZLayoutHeader)
         app.use(ZLayoutSidebar)
         app.use(ZLayoutContent)
+        app.use(ZMessage)
     },
 }

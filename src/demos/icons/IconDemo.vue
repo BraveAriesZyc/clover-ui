@@ -2,6 +2,8 @@
 import {ref, computed, watchEffect, onMounted, watch} from 'vue'
 import * as IconifyVue from '@iconify/vue'
 import {useRoute, useRouter} from 'vue-router'
+import DisplayPage from '../../components/Layout/DisplayPage.vue'
+import {openMessage} from 'packages'
 
 const router = useRouter()
 const route = useRoute()
@@ -354,6 +356,7 @@ function goto(set: string) {
 const copyIconName =async (text: string) => {
     try {
         await navigator.clipboard.writeText(text);
+        openMessage("复制成功");
         console.log("复制成功");
     } catch (error) {
         console.log("复制失败:", error);
@@ -362,14 +365,7 @@ const copyIconName =async (text: string) => {
 </script>
 
 <template>
-    <div class="section">
-        <div class="section__title">
-            Icons
-            <ZButton size="sm" variant="default" @click="() => router.push('/docs/icon')"
-            >文档
-            </ZButton
-            >
-        </div>
+    <DisplayPage title="Icon 图标" @goDocs="() => router.push('/docs/icon')">
         <div class="tools">
             <div class="sets-wrap">
                 <ZScrollChips
@@ -420,20 +416,10 @@ const copyIconName =async (text: string) => {
                 </ZVirtualGrid>
             </div>
         </div>
-    </div>
+    </DisplayPage>
 </template>
 
 <style scoped>
-.section {
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-}
-
-.section__title {
-    font-weight: 600;
-    margin-bottom: 10px;
-}
 
 .tools {
     position: sticky;

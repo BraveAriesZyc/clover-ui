@@ -56,16 +56,6 @@ const groups: NavGroup[] = [
         ],
     },
     {
-        name: '文档',
-        icon: 'bx:file',
-        items: docs.map((d) => ({
-            key: `/docs/${d.key}`,
-            label: `${d.title} 文档`,
-            short: d.short ?? d.key,
-            icon: 'bx:file',
-        })),
-    },
-    {
         name: '反馈',
         icon: 'bx:bell',
         items: [
@@ -80,6 +70,17 @@ const groups: NavGroup[] = [
             },
         ],
     },
+    {
+        name: '文档',
+        icon: 'bx:file',
+        items: docs.map((d) => ({
+            key: `/docs/${d.key}`,
+            label: `${d.title} 文档`,
+            short: d.short ?? d.key,
+            icon: 'bx:file',
+        })),
+    },
+
 ]
 
 export default groups

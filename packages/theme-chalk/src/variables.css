@@ -42,4 +42,20 @@
     --layout-bg: #f9fafb;
     --layout-header-bg: #ffffff;
     --layout-border: #f0f2f5;
+
+    /* layout metrics */
+    --z-header-h: 52;
+    --z-sidebar-w: 200;
+    --z-sidebar-cw: 72;
+    --z-content-pd: 12;
+
+    /* feedback tints */
+    --success-bg: rgba(103, 194, 58, 0.08);
+    --warning-bg: rgba(230, 162, 60, 0.08);
+    --danger-bg: rgba(245, 108, 108, 0.08);
+    --info-bg: rgba(144, 147, 153, 0.08);
+    --success-border: rgba(103, 194, 58, 0.18);
+    --warning-border: rgba(230, 162, 60, 0.18);
+    --danger-border: rgba(245, 108, 108, 0.18);
+    --info-border: rgba(144, 147, 153, 0.18);
 }

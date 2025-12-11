@@ -1,16 +1,21 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import DisplayPage from '../../components/Layout/DisplayPage.vue'
 import Sidebar from '../../layout/components/Sidebar.vue'
 import ThemeSettings from '../../layout/components/ThemeSettings.vue'
-import { useThemeStore } from '../../stores/theme'
+import { useThemeStore } from '@/stores/theme.ts'
 const collapsed = ref(false)
 const theme = useThemeStore()
 const showSettings = ref(false)
+const router = useRouter()
+function goDocs() {
+  router.push('/docs/layout')
+}
 </script>
 
 <template>
-  <div class="section">
-    <div class="section__title">通用布局组件</div>
+  <DisplayPage title="ZLayout 通用布局" @goDocs="goDocs">
     <ZLayout
       v-model:collapsed="collapsed"
       :header-height="52"
@@ -28,10 +33,7 @@ const showSettings = ref(false)
             <span class="brand__name">Clover UI</span>
           </div>
           <div class="actions">
-            <button class="btn" @click="toggle()">
-              <ZIcon :name="collapsed ? 'bx:chevrons-right' : 'bx:chevrons-left'" />
-              <span>{{ collapsed ? '展开侧边' : '折叠侧边' }}</span>
-            </button>
+
             <button class="btn" @click="theme.toggle()" :title="theme.state.theme === 'light' ? '切换到暗色' : '切换到浅色'">
               <ZIcon :name="theme.state.theme === 'light' ? 'ri:moon-line' : 'ri:sun-line'" />
               <span>主题</span>
@@ -43,9 +45,9 @@ const showSettings = ref(false)
           </div>
         </ZLayoutHeader>
       </template>
-      <template #sidebar>
+      <template #sidebar="{ toggle, collapsed }">
         <ZLayoutSidebar :collapsed="collapsed">
-          <Sidebar :collapsed="collapsed" />
+          <Sidebar :collapsed="collapsed" :toggle="toggle" />
         </ZLayoutSidebar>
       </template>
       <ZLayoutContent>
@@ -55,12 +57,11 @@ const showSettings = ref(false)
       </ZLayoutContent>
     </ZLayout>
     <ThemeSettings v-model="showSettings" />
-  </div>
+  </DisplayPage>
 </template>
 
 <style scoped>
-.section { padding: 12px;width: 100%;height: 100% }
-.section__title { font-weight: 700; margin-bottom: 8px; }
+
 .brand { display:flex; align-items:center; gap:8px; font-weight:700; }
 .brand__name { letter-spacing:.3px; }
 .actions { display:flex; gap:8px; }

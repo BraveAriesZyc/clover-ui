@@ -1,0 +1,13 @@
+.z-message-container { position: fixed; top: 1.25rem; left: 0; right: 0; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; pointer-events: none; z-index: 1000; }
+.z-message { min-width: 17.5rem; max-width: 37.5rem; padding: 0.5rem 0.75rem; border-radius: 0.5rem; border: 1px solid var(--color-border); background: var(--color-bg); color: var(--color-text); box-shadow: 0 0.375rem 1.125rem rgba(0,0,0,.08); display: flex; align-items: center; gap: 0.5rem; pointer-events: auto; }
+.z-message__close { appearance: none; background: transparent; border: 0; cursor: pointer; margin-left: auto; color: inherit; font-size: 1rem; line-height: 1; padding: 0 0.125rem; }
+.z-message[data-type='success'] { border-color: var(--success-border, rgba(103,194,58,.28)); background: var(--success-bg, rgba(103,194,58,.08)); color: var(--color-success); }
+.z-message[data-type='warning'] { border-color: var(--warning-border, rgba(230,162,60,.28)); background: var(--warning-bg, rgba(230,162,60,.08)); color: var(--color-warning); }
+.z-message[data-type='error'] { border-color: var(--danger-border, rgba(245,108,108,.28)); background: var(--danger-bg, rgba(245,108,108,.08)); color: var(--color-danger); }
+.z-message[data-type='info'] { border-color: var(--info-border, rgba(144,147,153,.28)); background: var(--info-bg, rgba(144,147,153,.08)); color: var(--color-info); }
+.z-message[data-type] .z-message__text { color: inherit; }
+.z-message[data-type] .z-message__close { color: inherit; }
+.z-message__text { line-height: 1.4; }
+.z-message__content{flex: 1;}
+.z-message-fade-enter-active, .z-message-fade-leave-active { transition: all .18s ease; }
+.z-message-fade-enter-from, .z-message-fade-leave-to { opacity: 0; transform: translateY(-0.375rem); }

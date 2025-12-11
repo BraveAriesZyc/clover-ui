@@ -10,6 +10,8 @@ const docs: DocItem[] = [
     { key: 'loading', title: 'Loading 加载', short: 'Loading' },
     { key: 'icon', title: 'Icon 图标', short: 'Icon' },
     { key: 'svg', title: 'SVG 图标', short: 'SVG' },
+    { key: 'layout', title: 'ZLayout 通用布局', short: 'Layout' },
+    { key: 'message', title: 'Message 消息提示', short: 'Message' },
 ]
 
 export default docs

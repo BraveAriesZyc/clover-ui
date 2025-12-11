@@ -1,21 +1,17 @@
+<script setup lang="ts">
+import { useRouter } from 'vue-router'
+import DisplayPage from '../../components/Layout/DisplayPage.vue'
+const router = useRouter()
+function goDocs() { router.push('/docs/alert') }
+</script>
+
 <template>
-    <div class="section">
-        <div class="section__title">Alert 警告提示（演示占位）</div>
+    <DisplayPage title="Alert 警告提示" @goDocs="goDocs">
         <div class="content__placeholder">此处为警告提示组件的演示占位页面。</div>
-    </div>
+    </DisplayPage>
 </template>
 
 <style scoped>
-    .section {
-        padding: 16px;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-    .section__title {
-        font-weight: 600;
-        margin-bottom: 10px;
-    }
     .content__placeholder {
         color: var(--color-muted);
         border: 1px dashed var(--color-border);

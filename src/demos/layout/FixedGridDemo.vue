@@ -1,19 +1,15 @@
 <script setup lang="ts">
     import { computed } from 'vue'
     import { useRouter } from 'vue-router'
+    import DisplayPage from '../../components/Layout/DisplayPage.vue'
     const router = useRouter()
-    function goDocs() {
-        router.push('/docs/fixed-grid')
-    }
+    function goDocs() { router.push('/docs/fixed-grid') }
 
     const items = computed(() => Array.from({ length: 180 }, (_, i) => i + 1))
 </script>
 
 <template>
-    <div class="section">
-        <div class="section__title">
-            ZFixedGrid 固定网格 <ZButton size="sm" variant="default" @click="goDocs">文档</ZButton>
-        </div>
+    <DisplayPage title="ZFixedGrid 固定网格" @goDocs="goDocs">
         <div class="gallery">
             <div class="gallery__meta">
                 <span>列数：12</span>
@@ -27,20 +23,10 @@
                 </ZFixedGrid>
             </div>
         </div>
-    </div>
+    </DisplayPage>
 </template>
 
 <style scoped>
-    .section {
-        padding: 16px;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-    .section__title {
-        font-weight: 600;
-        margin-bottom: 10px;
-    }
     .gallery {
         flex: 1;
         min-height: 0;
